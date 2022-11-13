@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Card } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
+import { UserContext } from '../Context/UserContext';
 
 const Blog = () => {
   const { id } = useParams();
   const [blog, setBlog] = useState();
+  const { user } = useContext(UserContext);
 
   useEffect(() => {
     const fetchData = async () => {
