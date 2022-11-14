@@ -45,10 +45,7 @@ const App = () => {
               path="/login"
               element={!user ? <Login /> : <Blogs />}
             ></Route>
-            <Route
-              path="/signin"
-              element={!user ? <Signin /> : <Blogs />}
-            ></Route>
+            <Route path="/signin" element={<Signin />}></Route>
           </Routes>
         </section>
       </BrowserRouter>
