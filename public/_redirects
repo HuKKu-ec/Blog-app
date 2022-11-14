@@ -1,1 +1,2 @@
- /api/* http://mern-blogs-app-backend.herokuapp.com/api/:splat 200 /* /index.html 200
+/api/* http://mern-blogs-app-backend.herokuapp.com/api/:splat 200
+/* /index.html 200
