@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
@@ -21,18 +21,17 @@ const Blogs = () => {
       });
     });
   };
+  const fetchData = async () => {
+    const response = await fetch('/api/blogs', {
+      method: 'GET',
+      headers: { Authorization: `Bearer ${user.token}` },
+    });
+    const json = await response.json();
+    if (response.ok) {
+      dispatch({ type: 'GETALLBLOGS', payload: json.blogs });
+    }
+  };
   useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch('/api/blogs', {
-        method: 'GET',
-        headers: { Authorization: `Bearer ${user.token}` },
-      });
-      const json = await response.json();
-      if (response.ok) {
-        dispatch({ type: 'GETALLBLOGS', payload: json.blogs });
-      }
-    };
-
     if (user) {
       fetchData();
     }
