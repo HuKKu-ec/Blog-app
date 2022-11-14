@@ -1,3 +1,14 @@
+# Blog App
+
+# You can view this project using this link
+[https://splendid-lolly-e827fb.netlify.app/](https://splendid-lolly-e827fb.netlify.app/)
+
+# About 
+
+This is my first MERN project and I explored the different scenarios of this stack through this project.I hosted the backend of this project in heroku server and the frontend in netlify.
+ 
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
