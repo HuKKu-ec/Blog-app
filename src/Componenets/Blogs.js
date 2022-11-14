@@ -35,7 +35,7 @@ const Blogs = () => {
     if (user) {
       fetchData();
     }
-  }, [user]);
+  }, [user, fetchData]);
   return (
     <div>
       <Container>

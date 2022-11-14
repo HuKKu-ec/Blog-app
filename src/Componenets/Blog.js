@@ -7,18 +7,18 @@ const Blog = () => {
   const { id } = useParams();
   const [blog, setBlog] = useState();
   const { user } = useContext(UserContext);
+  const fetchData = async () => {
+    const response = await fetch('/api/blogs/' + id, {
+      method: 'GET',
+      headers: { Authorization: `Bearer ${user.token}` },
+    });
+    const json = await response.json();
+    setBlog(json.blog);
+  };
 
   useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch('/api/blogs/' + id, {
-        method: 'GET',
-        headers: { Authorization: `Bearer ${user.token}` },
-      });
-      const json = await response.json();
-      setBlog(json.blog);
-    };
     fetchData();
-  }, []);
+  }, [fetchData]);
 
   return (
     <>
